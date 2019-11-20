@@ -1,0 +1,40 @@
+.reviews{
+    grid-column: full-start / full-end;
+    background-color: rgb(20, 20, 20);
+    margin-top: 5rem;
+    padding: 7rem 15rem;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.review{
+    text-transform: uppercase;
+    &__circle{
+        padding: 4rem;
+        height: 16rem;
+        width: 16rem;
+        text-align: center;
+        border: 1rem solid $color-grey-light-1;
+        border-radius: 50%;
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        &:hover{
+            animation: pulse 1s ease-in-out infinite;
+            border-color: $color-primary-dark;
+        }
+    }
+
+    &__number{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__info{
+        text-align: center;
+        font-size: 2.2rem;
+    }
+}

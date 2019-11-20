@@ -1,0 +1,28 @@
+.footer{
+    grid-column: full-start / full-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    font-size: 1.3rem;
+    color: $color-grey-light-2;
+
+    &__company{
+        display: flex;
+        justify-content: start;
+    }
+
+    &__logo{
+        margin-right: 3rem;
+        height: 8rem;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__copyright{
+        
+    }
+}
