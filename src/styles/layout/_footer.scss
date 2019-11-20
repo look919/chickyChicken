@@ -25,4 +25,15 @@
     &__copyright{
         
     }
+
+    &__link{
+        &:link,
+        &:visited{
+            text-decoration: none;
+            color: $color-grey-light-2;
+        }
+        &:hover{
+            color: $color-primary;
+        }
+    }
 }

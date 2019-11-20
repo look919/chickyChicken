@@ -22,13 +22,21 @@
     }
 
     &__item{
-        text-transform: uppercase;
-        font-weight: 300;
-        cursor: pointer;
+
+        &:link,
+        &:visited{
+            text-transform: uppercase;
+            font-weight: 300;
+            color: $color-white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+               
 
         &:hover{
-           color: $color-primary;
-        }
+            color: $color-primary;
+         }
     }
 
 }
