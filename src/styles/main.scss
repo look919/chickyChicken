@@ -5,12 +5,17 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/btn-inline";
+
 @import "layout/nav";
 @import "layout/header";
 @import "layout/description";
-@import "layout/menu";
+@import "layout/menuDashboard";
 @import "layout/reviews";
 @import "layout/footer";
+
+@import "layout/menu";
+@import "layout/buy";
 
 
 

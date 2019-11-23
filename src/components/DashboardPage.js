@@ -1,21 +1,20 @@
-import React from 'react';
+import React from 'react'
 import Nav from '../components/Nav';
 import Header from '../components/Header';
-import Description from '../components/Description'
-import MenuDashBoard from '../components/MenuDashBoard'
+import Description from '../components/Description';
+import MenuDashboard from '../components/MenuDashboard';
 import Reviews from '../components/Reviews';
-import Footer from '../components/Footer'
-import '../img/logo.png'
+import Footer  from '../components/Footer';
 
 const DashboardPage = () => (
-  <div className="container">
-      <Nav />
-      <Header />
-      <Description />
-      <MenuDashBoard />
-      <Reviews />
-      <Footer />
-  </div>
-);
+    <div className="container">
+        <Nav />
+        <Header />
+        <Description />
+        <MenuDashboard />
+        <Reviews />
+        <Footer />
+    </div>
+)
 
-export default DashboardPage;
+export default DashboardPage

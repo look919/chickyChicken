@@ -70,3 +70,11 @@ body {
         transform: translateY(.3rem);
     }
 }
+
+.isActive{
+    color: $color-primary !important;
+
+    &--2{
+        color: $color-primary-dark !important;
+    }
+}
