@@ -6,7 +6,7 @@ const Footer = () => (
     <footer className="footer">
         <div className="footer__company">
             <div>
-                <img src={logo} alt="Logo" className="footer__logo" />
+                <Link to='/'><img src={logo} className="nav__logo"/></Link>
             </div>
             <div className="footer__info">
                 <p>Moniuszki 6, 00-014 Warszawa</p>

@@ -29,6 +29,13 @@ body {
 .heading-2{
     @extend %heading;
     font-size: 4rem;
+
+    &--red{
+        font-weight: 300;
+        font-style: italic;
+        font-size: 3rem;
+        color: $color-primary;
+    }
 }
 .heading-3{
     @extend %heading;

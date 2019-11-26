@@ -7,7 +7,7 @@ import Buy from '../components/Buy';
 
 const MenuPage = () => (
     <div className="container--menu">
-        <Nav className="nav--menu"/>
+        <Nav/>
         <Menu />
         <Buy />
         <Footer />

@@ -7,7 +7,7 @@ import logo from '../img/logo.png'
 const Nav = () => (
    <nav className="nav">
         <div className="nav__logo">
-            <img src={logo} className="nav__logo"/>
+            <NavLink to='/'><img src={logo} className="nav__logo" id="up"/></NavLink>
         </div>
         <ul className="nav__list">
             <NavLink to='/' className="nav__item" activeClassName="isActive" exact={true}>Start</NavLink>
