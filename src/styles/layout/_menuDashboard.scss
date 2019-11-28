@@ -1,0 +1,57 @@
+.menuDashboard{
+    grid-column: center-start / center-end;
+    padding: 2.5rem;
+    margin: 5rem 0;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    &__title{
+        text-align: center;
+        margin-bottom: 7rem;
+
+        &--1{
+            font-family: $font-display;
+            color: $color-primary; 
+            margin-bottom: 1.5rem; 
+            animation: pulse 4s ease-in infinite both;  
+        }
+        &--2{
+            text-transform: uppercase;
+            animation: pulse 4s ease-in infinite both;  
+
+        }
+    }
+
+
+    &__items{
+        display: grid;
+        padding: 0 10rem;
+        margin-bottom: 5rem;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 7rem;
+        align-items: start;
+    }
+
+    &__item{
+        color: $color-grey-light-2;
+
+        &__flex{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        p{
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+    }
+
+    &__btn{
+        margin-top: 5rem;
+    }
+}

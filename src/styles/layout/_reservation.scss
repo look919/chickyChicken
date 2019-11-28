@@ -1,0 +1,38 @@
+.reservation{
+    
+    &__tableReserv,
+    &__floorReserv,
+    &__infoBar{
+        padding: 5rem 7rem;
+
+        display: flex;
+        flex-direction: column;
+        //justify-content: space-between;
+        align-items: center;
+    }
+
+    &__tableReserv{
+
+    }
+    &__floorReserv{
+        
+    }
+    &__infoBar{
+        background-color: #141414;
+        padding: 5rem 0;
+
+
+
+        &__icon{
+            fill: $color-white;
+
+
+            &--primary{
+                fill: $color-white;
+
+                height: 4rem;
+                width: 4rem;
+            }
+        }
+    }
+}

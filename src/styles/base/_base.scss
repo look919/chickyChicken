@@ -19,7 +19,22 @@ body {
     display: grid;
     grid-template-rows: 10rem calc(100vh - 10rem) 80vh repeat(4, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) 
-    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    [center-start] repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    &--menu,
+    &--reservation,
+    &--contact{
+        display: grid;
+        grid-template-rows: 10rem minmax(calc(100vh - 10rem),min-content) 10rem;
+        grid-template-columns: [full-start menu-start] 1fr [menu-end buy-start] 30rem [full-end buy-end];
+    }
+
+    &--reservation{
+        grid-template-columns: [full-start] 1fr [infobar-start] 30rem [infobar-end] 1fr [full-end];
+    }
+    &--contact{
+        grid-template-columns: 1fr;
+    }
 }
 
 ::selection {
