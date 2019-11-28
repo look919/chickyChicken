@@ -1,31 +1,105 @@
 .reservation{
     
-    &__tableReserv,
-    &__floorReserv,
+    &__form,
     &__infoBar{
         padding: 5rem 7rem;
 
         display: flex;
         flex-direction: column;
-        //justify-content: space-between;
         align-items: center;
     }
 
-    &__tableReserv{
+    &__form{
+        padding: 4rem 6rem;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-rows: [heading-start] minmax(1fr, 7rem) [heading-end] repeat(7, 1fr);
+        grid-template-columns: repeat(2,1fr);
 
+        &__item{
+            display: flex;
+            flex-direction: column;
+
+            &--heading{ 
+                grid-column: 1 / -1; 
+                margin-bottom: 2rem; 
+                text-align: center;
+
+                &--red{
+                    color: $color-primary;
+                }
+            }
+            &--date{ grid-column: 1 / 2;}
+            &--time{ grid-column: 2 / -1;}
+            &--numOfPeople{ grid-column: 1 / -1; }
+            &--phone{ grid-column: 1 / -1; }
+            &--email{ grid-column: 1 / -1; }
+            &--name{ grid-column: 1 / -1; }
+            &--description{ grid-column: 1 / -1; }
+        }
+        &__label{
+            font-size: 1.5rem;
+            &--center{
+                width: 13.2rem;
+                text-align: center;
+            }
+            &--time{
+                align-self: flex-end;
+            }
+        }
+
+        &__input,
+        &__textarea{
+            width: 100%;
+            background: inherit;
+            color: $color-white;
+            padding: .3rem .5rem;
+            border: 1px solid $color-grey-light-2;
+            font-size: 1.4rem;
+
+            &:active{
+                outline: none;
+            }
+            &:focus{
+                outline: none;
+                border: 1px solid $color-primary;
+                box-shadow: 0 1.5rem 4rem rgba($color-primary, .2);
+            }
+        }
+        &__time{
+            height: 4.96rem; 
+            width: 13rem; 
+            align-self: flex-end;
+            border: none;
+            text-align: center;
+        }
+        &__textarea{
+            resize: none;
+        }
+        &__btn{
+            font-size: 1.4rem;
+            padding: 1rem .4rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            grid-column: 1 / -1;
+        }       
     }
-    &__floorReserv{
-        
-    }
+    //infobar on the middle
+
     &__infoBar{
+        justify-content: space-between;
         background-color: #141414;
-        padding: 5rem 0;
+        padding: 8rem 1rem;
 
-
+        &__icons{
+            display: flex;
+            justify-content: center;
+        }
 
         &__icon{
             fill: $color-white;
-
+            height: 3rem;
+            width: 3rem;
 
             &--primary{
                 fill: $color-white;
@@ -34,5 +108,26 @@
                 width: 4rem;
             }
         }
+
+        &__info{
+            list-style-type: none;
+            font-size: 1.3rem;
+            text-align: center;
+            line-height: 1.2;
+
+            &__item{
+                
+                &--red{
+                    color:$color-primary;
+                }
+                &:not(:last-child){
+                    margin-bottom: 1.1rem;
+                }
+            }
+        }
     }
+
+
+
+    
 }

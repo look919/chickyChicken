@@ -30,10 +30,10 @@ body {
     }
 
     &--reservation{
-        grid-template-columns: [full-start] 1fr [infobar-start] 30rem [infobar-end] 1fr [full-end];
+        grid-template-columns: [full-start] 1fr [infobar-start] 15rem [infobar-end] 1fr [full-end];
     }
     &--contact{
-        grid-template-columns: 1fr;
+        grid-template-columns: [full-start] 1fr [full-end];
     }
 }
 

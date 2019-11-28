@@ -1,0 +1,36 @@
+.contact{
+    grid-column: 1 / -1;
+    
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    
+
+
+    &__info{
+        display: flex;
+        background-color: #141414;
+        padding: 3rem 15rem;
+  
+        justify-content: space-evenly;
+
+
+        &__icon{
+            height: 6rem;
+            width: 6rem;
+            fill: $color-primary;
+        }
+
+        &__title{
+            margin-bottom: 1.3rem;
+        }
+        &__paragraph{
+            text-align: center;
+            line-height: 1.4;
+            font-size: 1.3rem;
+        }
+    }
+    &__form{
+        padding: 3rem 4rem;
+
+    }
+}
