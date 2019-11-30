@@ -2,7 +2,7 @@
     grid-column: 1 / -1;
     
     display: grid;
-    grid-template-rows: min-content 1fr;
+    grid-template-rows: minmax(min-content, 80vh) 1fr;
     
 
 
@@ -12,12 +12,18 @@
         padding: 3rem 15rem;
   
         justify-content: space-evenly;
+        align-items: center;
 
+        
+        &__circle{
+        }
 
         &__icon{
             height: 6rem;
             width: 6rem;
             fill: $color-primary;
+
+            animation: moveInLeft 2s .5s ease-in-out both;
         }
 
         &__title{
@@ -27,10 +33,41 @@
             text-align: center;
             line-height: 1.4;
             font-size: 1.3rem;
+
+            &--animated{
+                color: $color-primary;
+                animation: pulse 2s 0s ease-in infinite both;
+            }
         }
     }
+
     &__form{
         padding: 3rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
 
+
+        &__title{
+            font-family: $font-display;
+        }
+        &__subtitle{
+            font-size: 2rem;
+        }
+        &__label{
+            text-align: center;
+        }
+
+        &__input,
+        &__textarea{
+            width: 40rem;
+            text-align: center;
+        }
+        &__textarea{
+            text-align: left;
+            height: 10rem;
+            padding: 1.2rem;
+        }
     }
 }

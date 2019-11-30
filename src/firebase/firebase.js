@@ -15,8 +15,8 @@ const database = firebase.database();
 
 
 //  database.ref('menu/sauces').push({
-//      id: 28,
-//      title: 'Sos Arabski',
+//      id: 30,
+//      title: 'SOS SŁODKO-KWAŚNY',
 //      description: "",
 //      prize: 1.95,
 //      url: "https://firebasestorage.googleapis.com/v0/b/chickychicken-e6c82.appspot.com/o/sosy.jpg?alt=media&token=0b6b95ba-d6a4-4729-b79c-fee354d9ecc8"

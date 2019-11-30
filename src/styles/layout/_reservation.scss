@@ -1,5 +1,6 @@
 .reservation{
     
+    overflow: hidden;
     &__form,
     &__infoBar{
         padding: 5rem 7rem;
@@ -10,11 +11,12 @@
     }
 
     &__form{
-        padding: 4rem 6rem;
+        padding: 3rem 6rem;
         padding-bottom: 0;
         display: grid;
         grid-template-rows: [heading-start] minmax(1fr, 7rem) [heading-end] repeat(7, 1fr);
         grid-template-columns: repeat(2,1fr);
+
 
         &__item{
             display: flex;
@@ -25,7 +27,11 @@
                 margin-bottom: 2rem; 
                 text-align: center;
 
+                animation: showUp 1.5s .3s ease-in both;
+
+
                 &--red{
+                    animation: showUp 2s 1.1s ease-in both;
                     color: $color-primary;
                 }
             }
@@ -56,9 +62,11 @@
             padding: .3rem .5rem;
             border: 1px solid $color-grey-light-2;
             font-size: 1.4rem;
-
+            
+            
             &:active{
                 outline: none;
+                background: inherit;
             }
             &:focus{
                 outline: none;
@@ -75,6 +83,7 @@
         }
         &__textarea{
             resize: none;
+            font-family: $font-primary;
         }
         &__btn{
             font-size: 1.4rem;
@@ -82,6 +91,10 @@
             margin-top: 1rem;
             margin-bottom: 1rem;
             grid-column: 1 / -1;
+            
+            &--animated{
+                animation: showUp 4s 1s ease-out both;
+            }
         }       
     }
     //infobar on the middle
@@ -89,7 +102,17 @@
     &__infoBar{
         justify-content: space-between;
         background-color: #141414;
-        padding: 8rem 1rem;
+        padding: 5rem 1rem;
+        background-image: linear-gradient(to right bottom,
+            rgba(#111, .85),
+            rgba(#111, .85)),
+            url(../img/background.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        animation: moveInTop 2s 1.3s ease-in-out both;
+        
 
         &__icons{
             display: flex;
@@ -126,8 +149,4 @@
             }
         }
     }
-
-
-
-    
 }

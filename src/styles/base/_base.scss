@@ -29,6 +29,7 @@ body {
         grid-template-columns: [full-start menu-start] 1fr [menu-end buy-start] 30rem [full-end buy-end];
     }
 
+
     &--reservation{
         grid-template-columns: [full-start] 1fr [infobar-start] 15rem [infobar-end] 1fr [full-end];
     }

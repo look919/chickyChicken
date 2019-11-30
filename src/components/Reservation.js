@@ -5,17 +5,18 @@ import { isInclusivelyAfterDay, SingleDatePicker} from 'react-dates';
 class Reservation extends React.Component{
     constructor(props) {
         super(props);
+        this.submitForm = this.submitForm.bind(this);
     
         this.state = {
             date: moment(),
             time: '15:00',
             calendarFocused: false,
-            numOfPeople: 0,
+            numOfPeople: 1,
             phone: '',
             email: '',
             name: '',
             description: '',     
-            error: ''
+            info: ''
         };
       }
       
@@ -51,17 +52,53 @@ class Reservation extends React.Component{
         const description = e.target.value
         this.setState(() => ({ description }));
       }
+      submitForm(ev) {
+        ev.preventDefault();
+        
+        const form = ev.target;
+        const data = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            form.reset();
+          } else {
+            this.setState({ info: "Przepraszamy, chwilowa usterka" });
+          }
+        };
+        //xhr.send(data)
+
+        this.setState(() => ({
+          date: moment(),
+          time: '15:00',
+          calendarFocused: false,
+          numOfPeople: 1,
+          phone: '',
+          email: '',
+          name: '',
+          description: '',     
+          info: 'Dziękujemy za złożenie rezerwacji!'
+        }));
+      } 
+     
 
     render(){
         return(
-            <div className="reservation__form">
+            <form 
+              onSubmit={this.submitForm}
+              action="https://formspree.io/xkdayzkm"
+              method="POST"
+              className="reservation__form"                   
+            >
                 {
                   this.props.title === "Wynajmij górne piętro" ?
-                  <h2 className="heading-3 reservation__form__item--heading reservation__form__item--heading--red">{this.props.title}</h2> :
-                  <h2 className="heading-3 reservation__form__item--heading">{this.props.title}</h2>
+                  <h2 name="title" className="heading-3 reservation__form__item--heading reservation__form__item--heading--red">{this.props.title}</h2> :
+                  <h2 name="title" className="heading-3 reservation__form__item--heading">{this.props.title}</h2>
                 }
                 <div className="reservation__form__item reservation__form__item--date">
-                  <label className="reservation__form__label reservation__form__label--center">Data</label>
+                  <label className="reservation__form__label reservation__form__label--center">Data *</label>
                   <div className="reservation__form--date">
                     <SingleDatePicker
                       date={this.state.date}
@@ -70,52 +107,70 @@ class Reservation extends React.Component{
                       onFocusChange={this.onFocusChange}
                       numberOfMonths={1}
                       isOutsideRange={day => !isInclusivelyAfterDay(day, moment())}   
-                      required  
+                      required 
                     />
                   </div>
                 </div>
                 <div className="reservation__form__item reservation__form__item--time">
-                  <label className="reservation__form__label reservation__form__label--center reservation__form__label--time">Godzina</label>
+                  <label className="reservation__form__label reservation__form__label--center reservation__form__label--time">Godzina *</label>
                   <input 
-                    type="time" min="10:00" max="22:00" 
+                    type="time" min="12:00" max="20:00" 
                     value={this.state.time} onChange={this.onTimeChange}
                     className="reservation__form__time"
                     required
+                    name="time"
                   />    
                 </div>
-                <div className="reservation__form__item reservation__form__item--numOfPeople">
-                  <label className="reservation__form__label">Liczba osób</label>
-                  <input 
-                    type="number" min="0" max="10" 
-                    value={this.state.numOfPeople} onChange={this.onNumOfPeopleChange}
-                    className="reservation__form__input" 
-                  />
-                </div>
+                {
+                  this.props.title === "Wynajmij górne piętro" ?
+                  <div className="reservation__form__item reservation__form__item--numOfPeople">
+                    <label className="reservation__form__label">Liczba osób</label>
+                    <input 
+                      type="number" min="1" max="50" 
+                      value={this.state.numOfPeople} onChange={this.onNumOfPeopleChange}
+                      className="reservation__form__input"
+                      name="numOfPeople"
+                    />
+                  </div> :
+                  <div className="reservation__form__item reservation__form__item--numOfPeople">
+                    <label className="reservation__form__label">Liczba osób</label>
+                    <input 
+                      type="number" min="1" max="6" 
+                      value={this.state.numOfPeople} onChange={this.onNumOfPeopleChange}
+                      className="reservation__form__input"
+                      name="numOfPeople"
+                    />
+                  </div>
+                }
+                
                 <div className="reservation__form__item reservation__form__item--phone">
-                  <label className="reservation__form__label">Telefon</label>
+                  <label className="reservation__form__label">Telefon *</label>
                   <input 
                     type="tel" 
                     value={this.state.phone} onChange={this.onPhoneChange}
                     className="reservation__form__input"
                     required
+                    name="phone"
                   />
                 </div>
                 <div className="reservation__form__item reservation__form__item--email">
-                  <label className="reservation__form__label">Email</label>
+                  <label className="reservation__form__label">Email *</label>
                   <input 
                     type="email" 
                     value={this.state.email} onChange={this.onEmailChange}
                     className="reservation__form__input reservation__form--email"
                     required
+                    name="email"
                   />
                 </div>
                 <div className="reservation__form__item reservation__form__item--name">
-                  <label className="reservation__form__label">Imię i nazwisko</label>
+                  <label className="reservation__form__label">Imię i nazwisko *</label>
                   <input 
                     type="text" 
                     value={this.state.name} onChange={this.onNameChange}
                     className="reservation__form__input reservation__form--name"
                     required
+                    name="name"
                   />
                 </div>
                 <div className="reservation__form__item reservation__form__item--description">
@@ -123,14 +178,21 @@ class Reservation extends React.Component{
                   <textarea
                     value={this.state.description} onChange={this.onDescriptionChange}
                     className="reservation__form__textarea reservation__form--description" 
+                    name="message"
                   />
                 </div>
-                <button className="btn reservation__form__btn">Wyślij</button>
-
-            </div>
+                
+                {
+                  !!this.state.info ? 
+                  <button className="btn reservation__form__btn reservation__form__btn--animated">Dziękujemy za złożenie rezerwacji!</button> :
+                  <button className="btn reservation__form__btn">Wyślij</button>
+                }
+            </form>
         )
        
-    }
+    }  
+     
+
 }
 
 export default Reservation
