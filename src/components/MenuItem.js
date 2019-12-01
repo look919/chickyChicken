@@ -1,9 +1,12 @@
 import React from 'react'
 import {CartIcon} from '../img/Icons';
+import uuid from 'react-uuid'
+
 
 
 
 const Menuitem = ({title, description, url, prize, id}) => {
+  
 
     const loadOrder = () => {
         const getOrder = localStorage.getItem('order')
@@ -16,7 +19,7 @@ const Menuitem = ({title, description, url, prize, id}) => {
     const addToOrder = () => {
         let order = loadOrder()
         order.push({
-            id,
+            id: uuid(),
             title,
             prize
         })

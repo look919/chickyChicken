@@ -19,10 +19,7 @@ class Order extends React.Component{
             prize: prize
         };
     }
-
-    componentDidMount() {
-        this.interval = setInterval(this.updateOrder, 100);
-    }
+    
     updateOrder = () => {
         const getData = localStorage.getItem('order')
         const order = getData ? JSON.parse(getData) : []
@@ -35,6 +32,9 @@ class Order extends React.Component{
             order: order,
             prize: prize
         }))
+    }
+    componentDidMount(){
+        setInterval(this.updateOrder, 350)
     }
 
     render(){
@@ -53,7 +53,7 @@ class Order extends React.Component{
                     }
                 </div>
                 <div className="order__paragraphs">
-                    <p className="order__paragraph">Razem: {this.state.prize + 'zł'}</p>
+                    <p className="order__paragraph">Razem: {this.state.prize.toFixed(2) + 'zł'}</p>
                     <p className="order__paragraph order__paragraph--italic">Płatność przy odbiorze w restauracji</p>
                 </div>           
                 
