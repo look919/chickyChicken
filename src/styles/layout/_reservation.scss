@@ -11,8 +11,9 @@
     }
 
     &__form{
-        padding: 3rem 6rem;
-        padding-bottom: 0;
+        //padding: 3rem 6rem;
+        padding: 8rem 15rem;
+        //padding-bottom: 0;
         display: grid;
         grid-template-rows: [heading-start] minmax(1fr, 7rem) [heading-end] repeat(7, 1fr);
         grid-template-columns: repeat(2,1fr);
@@ -136,7 +137,6 @@
             list-style-type: none;
             font-size: 1.3rem;
             text-align: center;
-            line-height: 1.2;
 
             &__item{
                 

@@ -1,7 +1,7 @@
 .order{
     grid-row: 2/3;
     grid-column: buy-start / buy-end;
-    padding: 2rem 2.5rem;
+    padding: 6rem 1.5rem;
     background-color: rgb(20, 20, 20);
     height: calc(100vh - 10rem);
 
@@ -20,7 +20,7 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
     &__header{
@@ -30,25 +30,74 @@
 
 
         &__heading-3{
-            font-family: $font-display;
             font-size: 2.5rem;
-            color: $color-primary;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
+            text-align: center;
         }
-        &__sub-heading{
-            font-size: 1.2rem;
-            font-style: italic;
-            font-weight: 300;
+
+        &__sauces{
+                font-size: 1.4rem;
+                font-family: $font-display;
+
+                color: $color-primary;
         }
+
     }
     
 
+    &__items{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+
+        flex: 2 0 0;
+
+        
+        &__sauces{
+            display: flex;
+            flex-direction: column;
+            &__select{
+                display: block;
+                font-family: $font-primary;          
+                border-radius: 15%;
+                background-color: inherit;
+                color: $color-white;
+                padding: .3rem .4rem;
+                text-align-last: center;
+                
+                &:last-child{
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                &:focus{
+                    background-color: #111;
+                    outline: none;
+                    padding: .5rem;
+            
+                }
+                
+            }            
+        }
+        &__paragraph{
+            font-size: 1.4rem;
+            height: auto;
+    
+            &--italic{
+                font-family: $font-display;
+                color: $color-primary;
+            }
+        }
+
+    }
     &__item{
         width: 100%;
         display: flex;
         justify-content: space-between;
         font-size: 1.4rem;
-        padding: 0 1.5rem;
+        padding: 0 .5rem;
 
         &__title{
             margin-right: 3rem;
@@ -71,22 +120,31 @@
             height: 1.5rem;
             fill: $color-primary-dark;
         }
+
+        
     }
 
-    &__paragraph{
-        font-size: 1.4rem;
-        height: auto;
+    &__submit{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem 2rem;
 
-        &--italic{
-            font-family: $font-display;
-            color: $color-primary;
-        }
+        &__btn{
+            margin-top: 3rem;
+            padding: 1rem 3.5rem;
+    
+            &--animated{
+                margin-top: 3rem;
+                padding: 1rem 1.5rem;
+                animation: showUp 4s 1s ease-out both;
+            }
+        }    
+
+
     }
 
-    &__btn{
-        margin-top: 3rem;
-        padding: 1rem 1.5rem;
-    }    
+    
         
     
 }

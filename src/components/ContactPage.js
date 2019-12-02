@@ -35,7 +35,6 @@ class ContactPage extends React.Component{
     onDescriptionChange = (e) => {
     const description = e.target.value
     this.setState(() => ({ description }));
-    console.log(this.state)
     }
     
     submitForm(ev) {
