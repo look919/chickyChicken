@@ -42,6 +42,10 @@
         text-decoration: none;
         padding: 1rem 2.5rem;
         cursor: pointer;
+        
+        @media only screen and (max-width: $bp-laptop-big){
+            font-size: 2rem;
+        }
 
         &:hover{
             color: $color-primary;

@@ -5,6 +5,8 @@
     align-items: center;
     padding: 1rem;
     background-color: #000;
+    position: relative;
+    z-index: 25;         //added to prevent order to cover footer
     
 
     font-size: 1.3rem;

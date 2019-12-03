@@ -11,9 +11,15 @@
     }
 
     &__form{
-        //padding: 3rem 6rem;
         padding: 8rem 15rem;
-        //padding-bottom: 0;
+
+        @media only screen and (max-width: $bp-laptop-big){
+            padding: 4rem 10rem;
+        }
+        @media only screen and (max-width: $bp-laptop-small){
+            padding: 3rem 4rem;
+        }
+
         display: grid;
         grid-template-rows: [heading-start] minmax(1fr, 7rem) [heading-end] repeat(7, 1fr);
         grid-template-columns: repeat(2,1fr);
@@ -111,8 +117,6 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-        animation: moveInTop 2s 1.3s ease-in-out both;
         
 
         &__icons{

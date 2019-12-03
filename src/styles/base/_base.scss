@@ -9,6 +9,9 @@
 html {
     font-size: 62.5%; 
 
+    @media only screen and (max-width: $bp-highest){
+        font-size: 52.5%;
+    }
 }
 
 body {
@@ -17,9 +20,15 @@ body {
 
 .container{
     display: grid;
-    grid-template-rows: 10rem calc(100vh - 10rem) 80vh repeat(4, min-content);
+    grid-template-rows: 10rem calc(100vh - 10rem) 60rem repeat(4, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) 
     [center-start] repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $bp-laptop-small){
+        grid-template-rows: 10rem calc(100vh - 10rem) 55rem repeat(4, min-content);
+
+    }
+    
 
     &--menu,
     &--reservation,

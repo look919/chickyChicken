@@ -9,7 +9,7 @@ import uuid from 'react-uuid'
 class Order extends React.Component{
     constructor(props) {
         super(props);
-        this.captchaLoaded = this.captchaLoaded.bind(this);
+        this.onloadCallback = this.onloadCallback.bind(this);
         this.verifyCallback = this.verifyCallback.bind(this);
 
         const getData = localStorage.getItem('order')
@@ -28,7 +28,7 @@ class Order extends React.Component{
             isVeryfied: false
         };
     }
-    captchaLoaded = () => {
+    onloadCallback = () => {
         console.log('captcha sucessfully loaded')
     }
     verifyCallback = (response) => {
@@ -117,7 +117,7 @@ class Order extends React.Component{
                     <p className="order__header__sauces">Do każdego zamówienia powyżej 10zł 2 sosy gratis, sprawdz czy wszystko się zgadza</p>
                 </div> 
                 <div className="order__items">
-                    <div>            
+                    <div className="order__items__order">            
                         {
                             this.state.order.map((el) => (
                                 <OrderItem key={uuid()} {...el}/>
@@ -167,7 +167,7 @@ class Order extends React.Component{
                             sitekey="6LdYLcMUAAAAANx2tsT3MKgIczb4X3G5SHHF47EJ"
                             render="explicit"
                             verifyCallback={this.verifyCallback}
-                            onloadCallback={this.captchaLoaded}
+                            onloadCallback={this.onloadCallback}
                         />            
                     {
                         !this.state.sendState ?
