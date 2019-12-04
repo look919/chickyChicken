@@ -34,6 +34,10 @@
                 margin-bottom: 2rem; 
                 text-align: center;
 
+                @media only screen and (max-width: $bp-high){                                   
+                    text-align: left;
+                } 
+
                 animation: showUp 1.5s .3s ease-in both;
 
 
@@ -42,8 +46,20 @@
                     color: $color-primary;
                 }
             }
-            &--date{ grid-column: 1 / 2;}
-            &--time{ grid-column: 2 / -1;}
+            &--date{ 
+                grid-column: 1 / 2;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    grid-column: 1 / -1;
+                }      
+            }
+            &--time{ 
+                grid-column: 2 / -1;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    grid-column: 1 / -1;
+                }
+            }
             &--numOfPeople{ grid-column: 1 / -1; }
             &--phone{ grid-column: 1 / -1; }
             &--email{ grid-column: 1 / -1; }
@@ -55,9 +71,17 @@
             &--center{
                 width: 13.2rem;
                 text-align: center;
+                
+                @media only screen and (max-width: $bp-high){                                   
+                    text-align: left;
+                }
             }
             &--time{
                 align-self: flex-end;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    align-self: flex-start;
+                }
             }
         }
 
@@ -87,6 +111,12 @@
             align-self: flex-end;
             border: none;
             text-align: center;
+
+            @media only screen and (max-width: $bp-high){                                   
+                align-self: flex-start;
+                width: 16rem;
+                text-align: left;
+            }
         }
         &__textarea{
             resize: none;
@@ -118,6 +148,11 @@
         background-position: center;
         background-repeat: no-repeat;
         
+        @media only screen and (max-width: $bp-high){                                   
+            grid-row: infobar-start / infobar-end;
+            grid-column: 1 / -1;
+            display: block;
+        }
 
         &__icons{
             display: flex;
@@ -134,6 +169,14 @@
 
                 height: 4rem;
                 width: 4rem;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    display: none;
+                }
+            }
+
+            @media only screen and (max-width: $bp-high){   
+                display: none;
             }
         }
 
@@ -141,6 +184,11 @@
             list-style-type: none;
             font-size: 1.3rem;
             text-align: center;
+
+            @media only screen and (max-width: $bp-high){       
+                grid-column: 1/-1;                            
+                display:grid;
+            }
 
             &__item{
                 

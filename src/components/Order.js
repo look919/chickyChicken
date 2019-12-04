@@ -111,7 +111,7 @@ class Order extends React.Component{
 
     render(){
         return (
-            <div className="order" ref="order">
+            <div className="order" ref="order" id="order">
                 <div className="order__header">
                     <h3 className="heading-3 order__header__heading-3">Oto Twoje zamowienie</h3>
                     <p className="order__header__sauces">Do każdego zamówienia powyżej 10zł 2 sosy gratis, sprawdz czy wszystko się zgadza</p>

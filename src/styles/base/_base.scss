@@ -12,6 +12,9 @@ html {
     @media only screen and (max-width: $bp-highest){
         font-size: 52.5%;
     }
+    @media only screen and (max-width: $bp-high){
+        font-size: 45%;
+    }
 }
 
 body {
@@ -34,13 +37,28 @@ body {
     &--reservation,
     &--contact{
         display: grid;
-        grid-template-rows: 10rem minmax(calc(100vh - 10rem),min-content) 10rem;
+        grid-template-rows: 10rem minmax(calc(100vh - 10rem), min-content) 10rem;
         grid-template-columns: [full-start menu-start] 1fr [menu-end buy-start] 30rem [full-end buy-end];
     }
-
+    &--menu{
+        @media only screen and (max-width: $bp-highest){
+            grid-template-rows: 10rem min-content [buy-start] 50rem [buy-end] 10rem;
+            grid-template-columns: [full-start menu-start] 1fr [menu-end full-end];
+            height: 20rem;
+        }
+    }
 
     &--reservation{
         grid-template-columns: [full-start] 1fr [infobar-start] 25rem [infobar-end] 1fr [full-end];
+
+        @media only screen and (max-width: $bp-highest){
+            grid-template-columns: [full-start] 1fr [infobar-start] 20rem [infobar-end] 1fr [full-end];
+        }
+        @media only screen and (max-width: $bp-high){
+            grid-template-rows: 10rem minmax(min-content, calc(100vh - 10rem)) 
+            [infobar-start] 30rem [infobar-end] 10rem;
+            grid-template-columns: [full-start] 1fr 1fr [full-end];
+        }
     }
     &--contact{
         grid-template-columns: [full-start] 1fr [full-end];

@@ -1,16 +1,9 @@
 .order{
     grid-row: 2/3;
     grid-column: buy-start / buy-end;
-    //padding: 6rem 1.5rem;
+    padding: 6rem 1.5rem;
     background-color: rgb(20, 20, 20);
     height: calc(100vh - 10rem);
-
-
-
-    @media only screen and (max-width: $bp-laptop-big){
-        padding: 2rem 1.5rem;
-    }
-
 
     background-image: linear-gradient(to right bottom,
         rgba(#111, .85),
@@ -31,7 +24,14 @@
     align-items: center;
     text-align: center;
     
-    
+    @media only screen and (max-width: $bp-laptop-big){
+        padding: 2rem 1.5rem;
+    }
+    @media only screen and (max-width: $bp-highest){
+        grid-column: 1 / -1;
+        grid-row: buy-start / buy-end;
+        height: 50rem;
+    }
 
     &__header{
         display: flex;
@@ -70,11 +70,20 @@
 
         @media only screen and (max-width: $bp-laptop-small){
             flex: 0 0 0;
-
+        }
+        @media only screen and (max-width: $bp-highest){
+            grid-column: 1 / -1;
+            grid-row: buy-start / buy-end;
+            flex-direction: row;
+            align-items: flex-start;
         }
 
         &__order{
             padding: 2rem 1rem;
+
+            @media only screen and (max-width: $bp-highest){
+                padding: 0 1rem;
+            }            
         }
         &__sauces{
             display: flex;

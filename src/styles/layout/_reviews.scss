@@ -4,6 +4,10 @@
     margin-top: 5rem;
     padding: 7rem 15rem;
 
+    @media only screen and (max-width: $bp-high){
+        padding: 6rem 7rem;
+    }
+
     display: flex;
     justify-content: space-evenly;
 }
