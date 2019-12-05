@@ -3,7 +3,7 @@ import database from '../firebase/firebase';
 import Recaptcha from 'react-recaptcha'
 
 import OrderItem from '../components/OrderItem'
-import uuid from 'react-uuid'
+import { uuid } from 'uuidv4';
 
 
 class Order extends React.Component{

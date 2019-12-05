@@ -1,6 +1,6 @@
 import React from 'react'
 import {CartIcon} from '../img/Icons';
-import uuid from 'react-uuid'
+import { uuid } from 'uuidv4';
 
 
 
