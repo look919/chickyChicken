@@ -9,6 +9,15 @@
 html {
     font-size: 62.5%; 
 
+    @media only screen and (max-width: $bp-highest){
+        font-size: 52.5%;
+    }
+    @media only screen and (max-width: $bp-high){
+        font-size: 42.5%;
+    }
+    @media only screen and (max-width: $bp-small){
+        font-size: 37.5%;
+    }
 }
 
 body {
@@ -17,24 +26,56 @@ body {
 
 .container{
     display: grid;
-    grid-template-rows: 10rem calc(100vh - 10rem) 80vh repeat(4, min-content);
+    grid-template-rows: 10rem calc(100vh - 10rem) 60rem repeat(4, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) 
     [center-start] repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $bp-laptop-small){
+        grid-template-rows: 10rem calc(100vh - 10rem) 55rem repeat(4, min-content);
+    }
+    @media only screen and (max-width: $bp-medium){
+        grid-template-rows: 10rem calc(100vh - 10rem) min-content repeat(4, min-content);
+    }
+    
 
     &--menu,
     &--reservation,
     &--contact{
         display: grid;
-        grid-template-rows: 10rem minmax(calc(100vh - 10rem),min-content) 10rem;
+        grid-template-rows: 10rem minmax(calc(100vh - 10rem), min-content) 10rem;
         grid-template-columns: [full-start menu-start] 1fr [menu-end buy-start] 30rem [full-end buy-end];
     }
-
-
+    &--menu{
+        @media only screen and (max-width: $bp-highest){
+            grid-template-rows: 10rem min-content [buy-start] 50rem [buy-end] 10rem;
+            grid-template-columns: [full-start menu-start] 1fr [menu-end full-end];
+            height: 20rem;
+        }
+    }
     &--reservation{
-        grid-template-columns: [full-start] 1fr [infobar-start] 15rem [infobar-end] 1fr [full-end];
+        grid-template-columns: [full-start] 1fr [infobar-start] 25rem [infobar-end] 1fr [full-end];
+
+        @media only screen and (max-width: $bp-highest){
+            grid-template-columns: [full-start] 1fr [infobar-start] 20rem [infobar-end] 1fr [full-end];
+        }
+        @media only screen and (max-width: $bp-high){
+            grid-template-rows: 10rem minmax(min-content, calc(100vh - 10rem)) 
+            [infobar-start] 30rem [infobar-end] 10rem;
+            grid-template-columns: [full-start] 1fr 1fr [full-end];
+        }
+        @media only screen and (max-width: $bp-medium){
+            grid-template-rows: 10rem minmax(min-content, calc(100vh - 10rem)) 
+            [infobar-start] 30rem [infobar-end] minmax(min-content, calc(100vh - 10rem)) 10rem;
+            grid-template-columns: [full-start] 1fr [full-end];
+        }
     }
     &--contact{
         grid-template-columns: [full-start] 1fr [full-end];
+
+        @media only screen and (max-width: $bp-medium){
+            grid-template-rows: 10rem min-content 10rem;
+
+        }
     }
 }
 

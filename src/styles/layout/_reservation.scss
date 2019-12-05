@@ -11,8 +11,21 @@
     }
 
     &__form{
-        padding: 3rem 6rem;
-        padding-bottom: 0;
+        padding: 8rem 15rem;
+
+        @media only screen and (max-width: $bp-laptop-big){
+            padding: 4rem 10rem;
+        }
+        @media only screen and (max-width: $bp-laptop-small){
+            padding: 3rem 4rem;
+        }
+        @media only screen and (max-width: $bp-medium){                                   
+            padding: 3rem 15rem;
+        }
+        @media only screen and (max-width: $bp-smallest){                                   
+            padding: 3rem 7rem;
+        }
+
         display: grid;
         grid-template-rows: [heading-start] minmax(1fr, 7rem) [heading-end] repeat(7, 1fr);
         grid-template-columns: repeat(2,1fr);
@@ -35,8 +48,21 @@
                     color: $color-primary;
                 }
             }
-            &--date{ grid-column: 1 / 2;}
-            &--time{ grid-column: 2 / -1;}
+            &--date{ 
+                grid-column: 1 / 2;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    grid-column: 1 / -1;
+                }     
+            }
+            &--time{ 
+                grid-column: 2 / -1;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    grid-column: 1 / -1;
+                }
+                
+            }
             &--numOfPeople{ grid-column: 1 / -1; }
             &--phone{ grid-column: 1 / -1; }
             &--email{ grid-column: 1 / -1; }
@@ -45,12 +71,25 @@
         }
         &__label{
             font-size: 1.5rem;
+
+            @media only screen and (max-width: $bp-medium){                                   
+                padding: .6rem 0;
+            } 
+
             &--center{
                 width: 13.2rem;
                 text-align: center;
+                
+                @media only screen and (max-width: $bp-high){                                   
+                    text-align: left;
+                }
             }
             &--time{
                 align-self: flex-end;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    align-self: flex-start;
+                }
             }
         }
 
@@ -62,7 +101,7 @@
             padding: .3rem .5rem;
             border: 1px solid $color-grey-light-2;
             font-size: 1.4rem;
-            
+
             
             &:active{
                 outline: none;
@@ -80,6 +119,18 @@
             align-self: flex-end;
             border: none;
             text-align: center;
+
+            @media only screen and (max-width: $bp-high){                                   
+                align-self: flex-start;
+                width: 16rem;
+                text-align: left;
+            }
+            @media only screen and (max-width: $bp-medium){                                   
+                height: 7.1rem;
+                text-align: center;
+                font-size: 3rem;
+            } 
+
         }
         &__textarea{
             resize: none;
@@ -110,9 +161,13 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-        animation: moveInTop 2s 1.3s ease-in-out both;
         
+        @media only screen and (max-width: $bp-high){                                   
+            grid-row: infobar-start / infobar-end;
+            grid-column: 1 / -1;
+            display: block;
+            padding: 3rem 1rem;
+        }
 
         &__icons{
             display: flex;
@@ -129,6 +184,14 @@
 
                 height: 4rem;
                 width: 4rem;
+
+                @media only screen and (max-width: $bp-high){                                   
+                    display: none;
+                }
+            }
+
+            @media only screen and (max-width: $bp-high){   
+                display: none;
             }
         }
 
@@ -136,8 +199,18 @@
             list-style-type: none;
             font-size: 1.3rem;
             text-align: center;
-            line-height: 1.2;
 
+            @media only screen and (max-width: $bp-high){       
+                grid-column: 1/-1;                            
+                display:grid;
+            }
+
+            @media only screen and (max-width: $bp-medium){                                   
+                padding: .5rem 15rem;
+            }
+            @media only screen and (max-width: $bp-smallest){                                   
+                padding: .5rem 7rem;
+            }
             &__item{
                 
                 &--red{

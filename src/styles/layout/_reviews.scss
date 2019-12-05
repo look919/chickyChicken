@@ -4,12 +4,23 @@
     margin-top: 5rem;
     padding: 7rem 15rem;
 
+    @media only screen and (max-width: $bp-high){
+        padding: 6rem 7rem;
+    }
+
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .review{
     text-transform: uppercase;
+    width: 16rem;
+
+    @media only screen and (max-width: $bp-small){
+        width: 12rem;
+    }
+
     &__circle{
         padding: 4rem;
         height: 16rem;
@@ -20,6 +31,11 @@
         position: relative;
         margin-bottom: 1.5rem;
 
+        @media only screen and (max-width: $bp-small){
+            height: 12rem;
+            width: 12rem;
+            padding: 3rem;
+        }
         &:hover{
             animation: pulse 1s ease-in-out infinite;
             border-color: $color-primary-dark;

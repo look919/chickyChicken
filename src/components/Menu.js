@@ -10,27 +10,36 @@ const Menu = (props) => {
         return (
             <div className="menu">
                 <div className="menu__navlinks">
-                    <Link to="boxes" 
-                    className="menu__navlink" spy={true} smooth={true}
-                    offset={-70} duration= {1500}
-                    >Boxy</Link>
-                    <Link to="others" 
-                    className="menu__navlink" spy={true} smooth={true}
-                    offset={-70} duration= {1500}
-                    >Inne Dania</Link>
-                    <Link to="snacks" 
-                    className="menu__navlink" spy={true} smooth={true}
-                    offset={-70} duration= {1500}
-                    >Przekąski</Link>
-                    <Link to="drinks" 
-                    className="menu__navlink" spy={true} smooth={true}
-                    offset={-70} duration= {1500}
-                    >Napoje</Link>
-                    <Link to="sauces" 
-                    className="menu__navlink" spy={true} smooth={true}
-                    offset={-70} duration= {1500}
-                    >Dodatkowe Sosy</Link>
+                    <div className="menu__navlinks-menu">
+                        <Link to="boxes" 
+                        className="menu__navlink" spy={true} smooth={true}
+                        offset={-70} duration= {1500}
+                        >Boxy</Link>
+                        <Link to="others" 
+                        className="menu__navlink" spy={true} smooth={true}
+                        offset={-70} duration= {1500}
+                        >Inne Dania</Link>
+                        <Link to="snacks" 
+                        className="menu__navlink" spy={true} smooth={true}
+                        offset={-70} duration= {1500}
+                        >Przekąski</Link>
+                        <Link to="drinks" 
+                        className="menu__navlink" spy={true} smooth={true}
+                        offset={-70} duration= {1500}
+                        >Napoje</Link>
+                        <Link to="sauces" 
+                        className="menu__navlink" spy={true} smooth={true}
+                        offset={-70} duration= {1500}
+                        >Dodatkowe Sosy</Link>
+                    </div>
+                    <div className="menu__navlinks-order">
+                        <Link to="end" 
+                            className="menu__navlink" spy={true} smooth={true}
+                            offset={-70} duration= {1500}
+                            >Zamówienie</Link>
+                    </div>           
                 </div>
+                  
 
                     <div className="menu--boxes" id="boxes">
                         <h2 className="heading-2--red menu--header">Boxy:</h2>
@@ -82,8 +91,8 @@ const Menu = (props) => {
                                 ) : (
                                     <div>Something went wrong, please try again later</div>
                                 )}
+                            <div id="end"></div>
                     </div>
-                
             </div>
         )         
  }

@@ -7,6 +7,7 @@ import uuid from 'react-uuid'
 
 const Menuitem = ({title, description, url, prize, id}) => {
   
+    let orderLength = 0;
 
     const loadOrder = () => {
         const getOrder = localStorage.getItem('order')
@@ -17,14 +18,20 @@ const Menuitem = ({title, description, url, prize, id}) => {
          }
     }
     const addToOrder = () => {
-        let order = loadOrder()
-        order.push({
-            id: uuid(),
-            title,
-            prize
-        })
-        localStorage.setItem('order', JSON.stringify(order))
+        let order = loadOrder() 
+
+        if(order.length <10) {
+            order.push({
+                id: uuid(),
+                title,
+                prize
+            })
+            localStorage.setItem('order', JSON.stringify(order))
+        }      
     }
+
+
+  
 
     return (
         <div className="menu__item">
@@ -36,15 +43,11 @@ const Menuitem = ({title, description, url, prize, id}) => {
             <button className="btn menu__btn" onClick={addToOrder}>
                 <CartIcon/>
                 {prize + 'zł'}
-            </button>  
+            </button> 
+            
         </div>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-      menu: getMenu(state.menu)
-    };
-};
 
 export default Menuitem
