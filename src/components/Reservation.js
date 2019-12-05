@@ -90,7 +90,7 @@ class Reservation extends React.Component{
               onSubmit={this.submitForm}
               action="https://formspree.io/xkdayzkm"
               method="POST"
-              className="reservation__form"                   
+              className="reservation__form"
             >
                 {
                   this.props.title === "Wynajmij górne piętro" ?

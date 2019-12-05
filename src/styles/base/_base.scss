@@ -13,7 +13,10 @@ html {
         font-size: 52.5%;
     }
     @media only screen and (max-width: $bp-high){
-        font-size: 45%;
+        font-size: 42.5%;
+    }
+    @media only screen and (max-width: $bp-small){
+        font-size: 37.5%;
     }
 }
 
@@ -29,7 +32,9 @@ body {
 
     @media only screen and (max-width: $bp-laptop-small){
         grid-template-rows: 10rem calc(100vh - 10rem) 55rem repeat(4, min-content);
-
+    }
+    @media only screen and (max-width: $bp-medium){
+        grid-template-rows: 10rem calc(100vh - 10rem) min-content repeat(4, min-content);
     }
     
 
@@ -47,7 +52,6 @@ body {
             height: 20rem;
         }
     }
-
     &--reservation{
         grid-template-columns: [full-start] 1fr [infobar-start] 25rem [infobar-end] 1fr [full-end];
 
@@ -59,9 +63,19 @@ body {
             [infobar-start] 30rem [infobar-end] 10rem;
             grid-template-columns: [full-start] 1fr 1fr [full-end];
         }
+        @media only screen and (max-width: $bp-medium){
+            grid-template-rows: 10rem minmax(min-content, calc(100vh - 10rem)) 
+            [infobar-start] 30rem [infobar-end] minmax(min-content, calc(100vh - 10rem)) 10rem;
+            grid-template-columns: [full-start] 1fr [full-end];
+        }
     }
     &--contact{
         grid-template-columns: [full-start] 1fr [full-end];
+
+        @media only screen and (max-width: $bp-medium){
+            grid-template-rows: 10rem min-content 10rem;
+
+        }
     }
 }
 

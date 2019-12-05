@@ -80,6 +80,8 @@ class ContactPage extends React.Component{
                             </div>
                             <div className="review__info contact__info__title">Dane kontaktowe</div>
                             <p className="contact__info__paragraph">Telefon: 653 234 125</p>
+                            <p className="contact__info__paragraph">Email: ChickyChicken@gmail.com</p>
+
                         </div>
                         <div className="review">
                             <div className="review__circle contact__info__circle">
@@ -119,7 +121,7 @@ class ContactPage extends React.Component{
                             onSubmit={this.submitForm}
                             action="https://formspree.io/xkdayzkm"
                             method="POST"
-                            className="reservation__form"  
+                            className="reservation__form contact__form"  
                         >
                             <div className="reservation__form__item reservation__form__item--email">
                                 <label className="reservation__form__label contact__form__label">Email *</label>
@@ -152,7 +154,7 @@ class ContactPage extends React.Component{
                             {
                                 !!this.state.info ? 
                                 <button className="btn reservation__form__btn reservation__form__btn--animated">Dziękujemy za wiadomość!</button> :
-                                <button className="btn reservation__form__btn">Wyślij</button>
+                                <button className="btn reservation__form__btn contact__form__btn">Wyślij</button>
                             }                                          
                         </form>
                     </div>

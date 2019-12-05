@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0 2rem;
     background-color: #000;
     position: relative;
     z-index: 25;         //added to prevent order to cover footer
@@ -12,14 +12,20 @@
     font-size: 1.3rem;
     color: $color-grey-light-2;
 
+    @media only screen and (max-width: $bp-medium){
+        padding: 0 1rem;
+    }
     &__company{
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
     }
 
     &__logo{
         margin-right: 3rem;
         height: 8rem;
+        @media only screen and (max-width: $bp-medium){
+            height: 7rem;
+        }
     }
     &__info{
         display: flex;
@@ -30,5 +36,9 @@
         word-wrap: wrap;
         width: 40%;
         text-align: right;
+
+        @media only screen and (max-width: $bp-medium){
+            width: 50%;
+        }
     }
 }

@@ -19,6 +19,9 @@
         @media only screen and (max-width: $bp-laptop-small){
             padding: 3rem 4rem;
         }
+        @media only screen and (max-width: $bp-medium){                                   
+            padding: 3rem 15rem;
+        } 
 
         display: grid;
         grid-template-rows: [heading-start] minmax(1fr, 7rem) [heading-end] repeat(7, 1fr);
@@ -36,6 +39,9 @@
 
                 @media only screen and (max-width: $bp-high){                                   
                     text-align: left;
+                }
+                @media only screen and (max-width: $bp-medium){                                   
+                    text-align: center;
                 } 
 
                 animation: showUp 1.5s .3s ease-in both;
@@ -51,7 +57,10 @@
 
                 @media only screen and (max-width: $bp-high){                                   
                     grid-column: 1 / -1;
-                }      
+                }
+                @media only screen and (max-width: $bp-medium){                                   
+                    grid-column: 1 / 2;
+                }       
             }
             &--time{ 
                 grid-column: 2 / -1;
@@ -59,6 +68,10 @@
                 @media only screen and (max-width: $bp-high){                                   
                     grid-column: 1 / -1;
                 }
+                @media only screen and (max-width: $bp-medium){                                   
+                    grid-column: 2 / -1;
+                }
+                
             }
             &--numOfPeople{ grid-column: 1 / -1; }
             &--phone{ grid-column: 1 / -1; }
@@ -68,6 +81,11 @@
         }
         &__label{
             font-size: 1.5rem;
+
+            @media only screen and (max-width: $bp-medium){                                   
+                padding: .6rem 0;
+            } 
+
             &--center{
                 width: 13.2rem;
                 text-align: center;
@@ -75,6 +93,9 @@
                 @media only screen and (max-width: $bp-high){                                   
                     text-align: left;
                 }
+                @media only screen and (max-width: $bp-medium){                                   
+                    text-align: center;
+                } 
             }
             &--time{
                 align-self: flex-end;
@@ -82,6 +103,9 @@
                 @media only screen and (max-width: $bp-high){                                   
                     align-self: flex-start;
                 }
+                @media only screen and (max-width: $bp-medium){                                   
+                    align-self: flex-end;
+                } 
             }
         }
 
@@ -93,7 +117,7 @@
             padding: .3rem .5rem;
             border: 1px solid $color-grey-light-2;
             font-size: 1.4rem;
-            
+
             
             &:active{
                 outline: none;
@@ -117,6 +141,12 @@
                 width: 16rem;
                 text-align: left;
             }
+            @media only screen and (max-width: $bp-medium){                                   
+                align-self: flex-end;
+                text-align: center;
+                height: 7.1rem;
+            } 
+
         }
         &__textarea{
             resize: none;
