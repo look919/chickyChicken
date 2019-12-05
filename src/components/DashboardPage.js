@@ -1,10 +1,10 @@
 import React from 'react'
-import Nav from '../components/Nav';
-import Header from '../components/Header';
-import Description from '../components/Description';
-import MenuDashboard from '../components/MenuDashboard';
-import Reviews from '../components/Reviews';
-import Footer  from '../components/Footer';
+import Nav from './Nav';
+import Header from './Header';
+import Description from './Description';
+import MenuDashboard from './MenuDashboard';
+import Reviews from './Reviews';
+import Footer  from './Footer';
 
 const DashboardPage = () => (
     <div className="container">
