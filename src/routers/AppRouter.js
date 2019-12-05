@@ -10,14 +10,15 @@ import NotFoundPage from '../components/NotFoundPage';
 
 const AppRouter = () => (
   <BrowserRouter>
+    <div>
       <Switch>
         <Route path="/" component={DashboardPage} exact={true} />
         <Route path="/menuPage" component={MenuPage}/>
         <Route path="/reservationPage" component={ReservationPage}/>
-        <Route path="/contactPage" component={ContactPage} />
-      
+        <Route path="/contactPage" component={ContactPage} />       
         <Route component={NotFoundPage} />
       </Switch>
+    </div>       
   </BrowserRouter>
   
 );

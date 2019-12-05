@@ -1,8 +1,9 @@
 import React from 'react'
-import Nav from './Nav';
+
+import Nav from './Nav'
 import Header from './Header';
 import Description from './Description';
-import MenuDashboard from './MenuDashboard';
+import Menu from './MenuDashBoard'
 import Reviews from './Reviews';
 import Footer  from './Footer';
 
@@ -11,7 +12,7 @@ const DashboardPage = () => (
         <Nav />
         <Header />
         <Description />
-        <MenuDashboard />
+        <Menu />
         <Reviews />
         <Footer />
     </div>
