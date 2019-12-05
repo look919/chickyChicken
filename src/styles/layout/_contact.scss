@@ -53,6 +53,10 @@
 
         &__title{
             margin-bottom: 1.3rem;
+
+            @media only screen and (max-width: $bp-small){
+                font-size: 1.4rem;
+            }
         }
         &__paragraph{
             text-align: center;
@@ -83,6 +87,10 @@
         }
         &__subtitle{
             font-size: 2rem;
+
+            @media only screen and (max-width: $bp-smallest){
+                font-size: 1.6rem;
+            }
         }
         &__label{
             text-align: center;

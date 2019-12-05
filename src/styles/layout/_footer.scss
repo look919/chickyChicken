@@ -15,17 +15,22 @@
     @media only screen and (max-width: $bp-medium){
         padding: 0 1rem;
     }
+    @media only screen and (max-width: $bp-smallest){                                   
+        font-size: 1.1rem;
+    }
     &__company{
         display: flex;
         justify-content: flex-start;
     }
 
     &__logo{
-        margin-right: 3rem;
+        margin-right: 4.5rem;
         height: 8rem;
         @media only screen and (max-width: $bp-medium){
             height: 7rem;
         }
+
+        
     }
     &__info{
         display: flex;
@@ -40,5 +45,6 @@
         @media only screen and (max-width: $bp-medium){
             width: 50%;
         }
+        
     }
 }
