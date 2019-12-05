@@ -1,4 +1,12 @@
 node_modules/
-public/dist/
-.env
-.env
+public/styles.css/
+public/styles.css.map/
+public/bundle.js.map/
+public/bundle.js/
+public/76465be29d569c472727be6a411ad880.png/
+public/579252d7f0c9b0b60bc499ab336476cd.png/
+public/a77163e8eb6a999d37d6d24095162fa9.png/
+public/c8907eaefb478dda4dd4ba0e7cc9be21.png/
+public/d2e5136093446428139599f4965faeb2.png/
+.env/
+
