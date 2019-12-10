@@ -1,73 +1,69 @@
-.menuDashboard{
-    grid-column: center-start / center-end;
-    padding: 2.5rem;
-    margin: 5rem 0;
-    
-    @media only screen and (max-width: $bp-high){
-        margin: 2rem 0;
-        padding: 0 2.5rem;
-    }    
+.menuDashboard {
+  grid-column: center-start / center-end;
+  padding: 2.5rem;
+  margin: 5rem 0;
 
+  @media only screen and (max-width: $bp-high) {
+    margin: 2rem 0;
+    padding: 0 2.5rem;
+  }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    &__title{
-        text-align: center;
-        margin-bottom: 7rem;
+  &__title {
+    text-align: center;
+    margin-bottom: 7rem;
 
-        &--1{
-            font-family: $font-display;
-            color: $color-primary; 
-            margin-bottom: 1.5rem; 
-            animation: pulse 4s ease-in infinite both;  
-        }
-        &--2{
-            text-transform: uppercase;
-            animation: pulse 4s ease-in infinite both;  
+    &--1 {
+      font-family: $font-display;
+      color: $color-primary;
+      margin-bottom: 1.5rem;
+      animation: pulse 4s ease-in infinite both;
+    }
+    &--2 {
+      text-transform: uppercase;
+      animation: pulse 4s ease-in infinite both;
+    }
+  }
 
-        }
+  &__items {
+    display: grid;
+    padding: 0 10rem;
+    margin-bottom: 5rem;
+
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+    align-items: start;
+
+    @media only screen and (max-width: $bp-high) {
+      margin-bottom: 2.5rem;
+      grid-gap: 3rem;
+    }
+  }
+
+  &__item {
+    color: $color-grey-light-2;
+
+    &__flex {
+      display: flex;
+      justify-content: space-between;
     }
 
-
-    &__items{
-        display: grid;
-        padding: 0 10rem;
-        margin-bottom: 5rem;
-
-        width: 100%;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-        grid-gap: 7rem;
-        align-items: start;
-
-        @media only screen and (max-width: $bp-high){
-            margin-bottom: 2.5rem;
-            grid-gap: 3rem;
-        }
+    p {
+      font-size: 1.4rem;
+      font-weight: 300;
     }
+  }
 
-    &__item{
-        color: $color-grey-light-2;
+  &__btn {
+    margin-top: 5rem;
 
-        &__flex{
-            display: flex;
-            justify-content: space-between;
-        }
-
-        p{
-            font-size: 1.4rem;
-            font-weight: 300;
-        }
+    @media only screen and (max-width: $bp-smallest) {
+      margin-top: 3.5rem;
+      padding: 1.5rem 3.5rem;
     }
-
-    &__btn{
-        margin-top: 5rem;
-
-        @media only screen and (max-width: $bp-smallest){
-            margin-top: 3.5rem;
-            padding: 1.5rem 3.5rem;
-        }
-    }
+  }
 }
