@@ -1,7 +1,3 @@
 # Git Commands
 
-git init - Create a new git repo
-git status - View the changes to your project code
-git add - Add files to staging area
-git commit - Creates a new commit with files from staging area
-git log - View recent commits
+React application for fast food restaurant. Provides a brief overview of services sold by the company and enables customers to roder food online, reserve a table and contact with restaurant.
